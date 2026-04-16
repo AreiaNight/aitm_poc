@@ -1,0 +1,45 @@
+<%# Título de la página mostrado por el layout %>
+<% @title = "Future Industries — Dashboard" %>
+
+<div class="dashboard">
+
+  <%# Cabecera que indica el usuario autenticado %>
+  <div class="dashboard-header">
+    <h1>Welcome, <%= @user %>!</h1>
+    <p class="subtitle">Remember to always stay curious and keep learning!</p>
+  </div>
+
+  <%# Muestra información de la sesión actual %>
+  <div class="session-info">
+    <h2>Active Session</h2>
+    <p><strong>User:</strong> <%= @user %></p>
+  </div>
+
+  <%# Caja que muestra el token JWT actual (sensible, no compartir) %>
+  <div class="token-box">
+    <h3>Your session token</h3>
+    <p class="token-label">
+      Don't share your private token with anyone!
+      It contains sensitive information about your session.
+    </p>
+    <p class="token-value"><%= @token %></p>
+  </div>
+
+  <%# Contenido ficticio del portal representando recursos del IdP %>
+  <div class="portal-content">
+    <h3>Future Industries Projects</h3>
+    <ul>
+      <li>Project A: Building a sustainable city powered by renewable energy.</li>
+      <li>Project B: Developing advanced protocols for secure infrastructure.</li>
+      <li>Project C: Sato Airplane fleet — Q4 Report.</li>
+      <%# Contenido condicional solo visible para el usuario `avatarkorra` %>
+      <% if @user == "avatarkorra@futureindustries.com" %>
+        <li> Project D: Ask Asami to be my wife</li>
+      <% end %>
+    </ul>
+  </div>
+
+  <%# Enlace para cerrar sesión (borra la cookie de sesión en el IdP) %>
+  <a href="/logout" class="btn-logout">Logout</a>
+
+</div>

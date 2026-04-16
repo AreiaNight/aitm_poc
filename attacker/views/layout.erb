@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%# Metadatos básicos y enlace al CSS principal (se omite comentar el CSS según petición) %>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vaatu's spiritual tree</title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+
+    <body>
+        <%# Encabezado fijo de la interfaz del atacante %>
+        <header class="header attacker-header">
+            <div class="logo"> Spiritual panel </div>
+            <span class="attacker-badge">PoC - Educational purpose only</span>
+        </header>
+
+        <%# `yield` inserta el contenido de la vista solicitada (dashboard.erb) %>
+        <main>
+            <%= yield %>
+        </main>
+
+        <%# Pie de página informativo %>
+        <footer>
+            <p>AiMT Token Replay PoC - Future Industries</p>
+        </footer>
+
+    </body>
+</html>
